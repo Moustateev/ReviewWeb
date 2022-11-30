@@ -1,0 +1,377 @@
+*{
+  background: rgb(0, 0, 0);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  zoom: 95.5%;
+}
+
+.center{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .outer{
+    position: relative;
+    margin: 0 50px;
+    background: #111;
+  }
+  .button{
+    height: 70px;
+    width: 220px;
+    border-radius: 50px;
+    margin-top: 25px;
+    margin-right: 680px;
+  }
+
+  .outer button, .outer span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .outer button{
+    background: #111;
+    color: #f2f2f2;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    z-index: 9;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .button button{
+    height: 60px;
+    width: 210px;
+    border-radius: 50px;
+  }
+
+  .outer span{
+    height: 100%;
+    width: 100%;
+    background: inherit;
+  }
+  .button span{
+    border-radius: 50px;
+  }
+
+  .outer:hover span:nth-child(1){
+    filter: blur(7px);
+  }
+
+  .outer:hover span:nth-child(2){
+    filter: blur(14px);
+  }
+
+  .outer:hover{
+    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+    animation: rotate 1.5s linear infinite;
+  }
+
+  @keyframes rotate {
+    0%{
+      filter: hue-rotate(0deg);
+    }
+    100%{
+      filter: hue-rotate(360deg);
+    }
+  }
+
+  @media (max-width: 640px){
+    .center{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .outer{
+      margin: 50px 0;
+    }
+  }
+
+  nav{
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+  }
+  nav .logo{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+  }
+  nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  nav ul li{
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    color: #111;
+    background: aqua;
+  }
+  nav .menu-btn i{
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
+  @media (max-width: 1000px){
+    nav{
+      padding: 0 40px 0 50px;
+    }
+  }
+  @media (max-width: 920px) {
+    nav .menu-btn i{
+      display: block;
+    }
+    #click:checked ~ .menu-btn i:before{
+      content: "\f00d";
+    }
+    nav ul{
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      background: #111;
+      height: 100vh;
+      width: 100%;
+      text-align: center;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    #click:checked ~ ul{
+      left: 0;
+    }
+    nav ul li{
+      width: 100%;
+      margin: 40px 0;
+    }
+    nav ul li a{
+      width: 100%;
+      margin-left: -100%;
+      display: block;
+      font-size: 20px;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    #click:checked ~ ul li a{
+      margin-left: 0px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover{
+      background: none;
+      color: cyan;
+    }
+  }
+
+.sub-menu-1{
+  display: none;
+}
+
+nav ul li:hover .sub-menu-1{
+  display: block;
+  position: absolute;
+  margin-top:14px;
+  margin-right: 10px;
+}
+
+nav ul li:hover .sub-menu-1 ul{
+  display: block;
+  margin: 12px;
+}
+
+nav ul li:hover .sub-menu-1 ul li{
+  width: 150px;
+  padding: 10px;
+  background: transparent;
+  border-radius: 0;
+  text-align: center;
+}
+
+nav ul li:hover .sub-menu-1 ul li:last-child{
+  border-bottom:none;
+}
+
+  .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: -1;
+    width: 100%;
+    padding: 0 30px;
+    color: #1b1b1b;
+  }
+  .content div{
+    font-size: 40px;
+    font-weight: 700;
+  }
+  
+p{
+    font-size: 20PX;
+    color: aqua;
+}
+
+.row{
+    display: flex;
+    padding-top: 140px;
+    padding-left: 160px;
+    align-items: center; 
+}
+
+.title{
+    font-size: 45px;
+}
+
+.col{
+    flex-basis: 45%;
+    padding-left: 35px;
+}
+
+.grid-item1{
+  margin-right: 25px;
+  width: 500px;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.grid-item2{
+  margin-left: 25px;
+
+  width: 500px;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.grid-item3{
+  margin-left: 25px;
+
+  width: 500px;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.grid-item1:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 0 80px aqua ;
+}
+
+.grid-item2:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 0 80px aqua ;
+}
+
+.grid-item3:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 0 80px aqua ;
+}
+
+.card-img {
+  display: block;
+  width: 190px;
+  height: 150px;
+  
+}
+
+.card-img2 {
+  display: block;
+  width: 140px;
+  height: 150px;
+  
+}
+
+.card-img3 {
+  display: block;
+  width: 150px;
+  height: 150px;
+  
+}
+
+.card-content {
+  padding: 3rem;
+}
+
+/*.card-header {
+  font-size: 18px;
+  font-weight: 500;
+  color: #0d0d0d;
+  margin-bottom: 1.5rem;
+}*/
+
+.card-text {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  line-height: 1.7;
+  color: aqua;
+  margin-bottom: 2.5rem;
+}
+
+.card-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 14px 14px 14px;
+  font-size: 24px;
+  text-align: center;
+  color: #000000;
+  background-color: #fff;
+  border: none;
+  border-radius: 15px;
+  transition: 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+}
+
+.card-btn span {
+  margin-left: 15px;
+  transition: 0.2s;
+}
+
+.card-btn:hover,
+.card-btn:active {
+  background-color: aqua;
+}
+
+.card-btn:hover span,
+.card-btn:active span {
+  margin-left: 1.5rem;
+}
+
+@media only screen and (max-width: 60em) {
+  body {
+    padding: 3rem;
+  }
+
+  .grid {
+    grid-gap: 3px;
+  }
+}
+
